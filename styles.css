@@ -60,6 +60,15 @@ h2 { font-size:clamp(2.3rem,3.2vw,3.25rem); line-height:1.12; letter-spacing:-.0
 .service-card { display:flex; flex-direction:column; padding:29px 29px 26px; background:var(--bg); transition:background .2s; }
 .service-card:hover { background:var(--surface); }
 .service-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:30px; }
+.service-visual { height:210px; width:100%; margin-bottom:25px; overflow:hidden; border:1px solid var(--line); border-radius:4px; background:var(--surface); }
+.service-visual img { width:100%; height:100%; object-fit:cover; }
+.service-visual-pair { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+.service-visual-pair img:first-child { object-position:58% 50%; }
+.service-visual-pair img:last-child { object-position:50% 45%; }
+.service-systems-photo { object-position:50% 42%; }
+.service-visual-symbol { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; background:radial-gradient(ellipse at 50% 40%,#1b4152 0%,var(--surface) 70%); }
+.service-visual-symbol .service-icon { width:64px; height:64px; stroke-width:1; }
+.service-visual-symbol span { color:var(--muted); font-family:"Courier New",monospace; font-size:.75rem; letter-spacing:.04em; }
 .service-number { font-family:"Courier New",monospace; color:#889eaa; font-size:.8125rem; }
 .service-icon { width:27px; height:27px; color:var(--accent); }
 h3 { font-size:1.25rem; font-weight:600; letter-spacing:-.02em; line-height:1.3; margin-bottom:13px; }
