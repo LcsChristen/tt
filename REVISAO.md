@@ -10,6 +10,7 @@ Base: commit `14ffd24ef086919f77e4d75318e13ca6e7c989d1` da branch `main`.
 - Link de pular conteúdo com destino focável; telefone com `tel:+5554991381775`.
 - H1 identifica assistência técnica de computadores e notebooks em Caxias do Sul. A chamada original permanece como texto complementar.
 - Canonical, `og:url`, `og:image` absoluta e texto alternativo; JSON-LD recebe `url`, `@id` e `image`.
+- Destaque “5,0 no Google” agora é um link para o perfil confirmado pelo proprietário (`https://share.google/lLdbB1t2QgDdi6zVx`), também incluído em `sameAs`. O link informa a abertura em nova aba e mantém foco visível.
 - Oito imagens com versões menores, `srcset` e `sizes` calculados a partir da grade existente, incluindo as duas fotos do mesmo cartão. Originais, dimensões declaradas e carregamento tardio dos serviços preservados.
 - Ajustes de quebra de texto e flex/grid para reduzir risco de transbordamento com texto maior. Nenhuma biblioteca de produção adicionada.
 
@@ -37,7 +38,7 @@ O conjunto original soma 742,2 KiB. Para uma tela de 390 px, as variantes estima
 - Não foi possível executar navegador de QA local ou Lighthouse mobile: o ambiente não expõe a capacidade de controle de navegador exigida pelo fluxo de prévia. Não há pontuações inventadas.
 - Portanto, o resultado visual nas cinco larguras, navegação real por teclado, JavaScript efetivamente desativado, zoom/texto de 200%, rolagem horizontal e posição do foco frente à barra fixa precisam ser confirmados em navegador. A simulação de DOM não substitui essas verificações.
 - A prioridade alta da imagem principal permanece até haver uma medição de LCP. Ela continua sem `loading="lazy"`.
-- Falta o link oficial confirmado do perfil da T&T no Google. O selo existente ainda não é link; não foram acrescentados `sameAs`, quantidade de avaliações ou avaliações estruturadas. A nota existente não foi alterada nem revalidada por uma fonte pública identificável.
+- O proprietário forneceu o link oficial do perfil da T&T no Google. A leitura automática não foi possível: a ferramenta de pesquisa não acessou a página e o acesso direto retornou HTTP 429. Por isso, a nota existente não foi alterada nem revalidada, e nenhuma quantidade de avaliações foi acrescentada. `aggregateRating` permanece ausente.
 - A política de cobrança do diagnóstico não está confirmada; a FAQ comercial foi preservada. Não foram acrescentados preços, garantias, prazos, endereço residencial nem horários.
 - O arquivo `og:image` já existe no site público. Sua arte original foi mantida; a validação de cartões sociais reais ainda é necessária.
 

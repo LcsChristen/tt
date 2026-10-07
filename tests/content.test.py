@@ -41,7 +41,12 @@ data = json.loads(re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</s
 assert data['url'] == url and data['@id'] == url + '#negocio'
 assert data['image'] == meta['og:image']
 assert 'aggregateRating' not in data
-assert 'sameAs' not in data  # Still awaiting the verified Google profile.
+google_profile = 'https://share.google/lLdbB1t2QgDdi6zVx'  # Confirmed by the business owner.
+assert data['sameAs'] == [google_profile]
+rating_links = [x for x in links if 'google-rating' in x.get('class', '').split()]
+assert len(rating_links) == 1 and rating_links[0]['href'] == google_profile
+assert rating_links[0]['target'] == '_blank'
+assert 'noreferrer' in rating_links[0]['rel'] and 'abre em nova aba' in rating_links[0]['aria-label']
 assert 'streetAddress' not in data['address']
 assert 'openingHours' not in data and 'openingHoursSpecification' not in data
 images = [a for t, a in p.nodes if t == 'img']
