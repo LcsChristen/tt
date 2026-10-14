@@ -281,3 +281,28 @@ details p { margin:0 35px 26px 0; font-size:1rem; color:var(--muted); line-heigh
   html { scroll-behavior:auto; }
   *,*::before,*::after { transition:none !important; }
 }
+
+/* Valores: busca e entrega, com atendimento técnico na bancada. */
+.pricing { background:var(--paper); color:var(--ink); padding-block:64px 72px; border-block:1px solid #cbd8df; }
+.pricing h2 { font-size:clamp(1.9rem,3vw,2.55rem); line-height:1.2; letter-spacing:-.025em; }
+.pricing-intro { max-width:780px; margin:12px 0 30px; color:#49626f; font-size:1.0625rem; line-height:1.65; }
+.pricing-card { width:100%; max-width:560px; min-width:0; padding:26px; border:1px solid #cbd8df; border-radius:8px; background:#f7fafb; }
+.pricing-card h3 { margin-bottom:8px; font-size:1.375rem; }
+.pricing-description { color:#49626f; margin-bottom:18px; line-height:1.6; }
+.pricing-price { margin-bottom:22px; line-height:1.25; }
+.pricing-price strong { display:block; font-size:2.4rem; font-weight:700; letter-spacing:-.02em; }
+.pricing-price > span { display:block; color:#49626f; margin-top:4px; font-size:.875rem; font-weight:600; }
+.pricing-benefits { margin:0 0 30px; padding:0; list-style:none; }
+.pricing-benefits li { display:flex; align-items:baseline; gap:10px; margin-block:10px; color:#49626f; }
+.pricing-benefits li > span { flex-shrink:0; color:#087e47; font-weight:700; }
+.pricing-cta { width:100%; min-height:52px; }
+.pricing :focus-visible { outline-color:var(--brand); }
+.pricing-notice { margin:18px 0 0; padding:16px 18px; border-left:3px solid #bb730c; border-radius:7px; background:#fff1d6; color:#744609; line-height:1.65; }
+@media (max-width:720px) {
+  .pricing { padding-block:44px 48px; }
+  .pricing-intro { font-size:1rem; margin-bottom:24px; }
+  .pricing-card { padding:22px; }
+  .pricing-price strong { font-size:2.2rem; }
+  .pricing-benefits { margin-bottom:24px; }
+  .pricing-notice { padding:14px 16px; }
+}
