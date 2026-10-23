@@ -30,7 +30,19 @@ assert len(re.findall(r'<h1\b', html)) == 1
 assert 'Assistência técnica de computadores e notebooks em' in html
 assert 'Seu computador, de volta ao seu ritmo.' in html
 assert 'id="conteudo" tabindex="-1"' in html
-assert len(re.findall(r'<details>', html)) == 6
+assert len(re.findall(r'<details>', html)) == 7
+
+# Business-approved service prices and conditions.
+expected_prices = {"diagnostico":60,"ssd":99,"ram":60,"limpeza-desktop":160,"limpeza-notebook":190,"windows":150,"backup":190,"linux":150,"malware":120,"otimizacao":120,"impressora-wifi":80,"remoto":70}
+price_rows = re.findall(r'<div class="service-price" data-service="([^"]+)">.*?<dd>R\$ (\d+)</dd>', html, re.S)
+assert len(price_rows) == len(expected_prices)
+assert {key:int(value) for key,value in price_rows} == expected_prices
+assert 'limite de volume a definir previamente' in html
+assert 'backup e recuperação de dados não são garantidos' in html.lower()
+assert 'Até 40 minutos' in html and 'sem dual boot' in html
+assert 'Abatido se você aprovar o reparo.' in html
+assert 'não realiza visitas domiciliares' in html
+
 url = 'https://lcschristen.github.io/tt/'
 assert ('link', {'rel': 'canonical', 'href': url}) in p.nodes
 meta = {a.get('property'): a.get('content') for t, a in p.nodes if t == 'meta'}

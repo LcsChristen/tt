@@ -255,7 +255,7 @@ details p { margin:0 35px 26px 0; font-size:1rem; color:var(--muted); line-heigh
   .faq-heading p:last-child { margin-bottom:4px; }
   summary { padding-block:22px; }
   .contact { padding-block:56px; }
-  .contact-inner { grid-template-columns:1fr; gap:29px; }
+  .contact-inner { grid-template-columns:minmax(0,1fr); gap:29px; }
   .contact h2 { font-size:2.35rem; }
   .contact-action { justify-self:stretch; align-items:stretch; text-align:center; }
   .contact-phone { margin-top:16px; }
@@ -280,4 +280,20 @@ details p { margin:0 35px 26px 0; font-size:1rem; color:var(--muted); line-heigh
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   *,*::before,*::after { transition:none !important; }
+}
+
+/* Preços integrados aos serviços existentes. */
+.service-prices { margin:0 0 22px; min-width:0; }
+.service-price { display:grid; grid-template-columns:minmax(0,1fr) max-content; align-items:baseline; gap:12px; padding-block:15px; border-top:1px solid var(--line); }
+.service-price dt { min-width:0; color:var(--text); font-size:.9375rem; font-weight:600; line-height:1.45; }
+.service-price dt > span { display:block; margin-top:6px; color:var(--muted); font-size:.8125rem; font-weight:400; line-height:1.6; }
+.service-price dd { margin:0; color:var(--accent); font-size:1.125rem; font-weight:700; line-height:1.4; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.service-terms { margin-top:25px; border-left:2px solid var(--accent); padding:1px 0 1px 20px; color:var(--muted); }
+.service-terms p { margin:10px 0; font-size:.875rem; line-height:1.8; }
+.service-terms strong { color:var(--text); font-weight:600; }
+.remote-prices { max-width:540px; margin-bottom:27px; }
+.remote-prices .service-price { padding-block:17px; border-bottom:1px solid var(--line); }
+@media (max-width:380px) {
+  .service-price { grid-template-columns:1fr; gap:6px; }
+  .service-price dd { justify-self:start; }
 }
