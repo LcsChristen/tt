@@ -60,7 +60,17 @@ assert len(rating_links) == 1 and rating_links[0]['href'] == google_profile
 assert rating_links[0]['target'] == '_blank'
 assert 'noreferrer' in rating_links[0]['rel'] and 'abre em nova aba' in rating_links[0]['aria-label']
 assert 'streetAddress' not in data['address']
-assert 'openingHours' not in data and 'openingHoursSpecification' not in data
+assert 'openingHours' not in data
+weekdays = ['https://schema.org/' + day for day in ['Monday','Tuesday','Wednesday','Thursday','Friday']]
+assert data['openingHoursSpecification'] == [
+    {'@type':'OpeningHoursSpecification','dayOfWeek':weekdays,'opens':'09:00','closes':'12:00'},
+    {'@type':'OpeningHoursSpecification','dayOfWeek':weekdays,'opens':'13:00','closes':'18:30'},
+    {'@type':'OpeningHoursSpecification','dayOfWeek':'https://schema.org/Saturday','opens':'09:00','closes':'13:00'}
+]
+assert 'hora marcada' not in html.lower()
+assert 'id="horarios" tabindex="-1"' in html
+assert 'Agende pelo WhatsApp antes de trazer o equipamento.' in html
+assert '<dt>Domingo</dt><dd>Fechado</dd>' in html
 images = [a for t, a in p.nodes if t == 'img']
 assert len(images) == 8
 for i, attrs in enumerate(images):

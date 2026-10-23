@@ -297,3 +297,14 @@ details p { margin:0 35px 26px 0; font-size:1rem; color:var(--muted); line-heigh
   .service-price { grid-template-columns:1fr; gap:6px; }
   .service-price dd { justify-self:start; }
 }
+
+/* Horários de funcionamento e orientação para entrega. */
+.hero-note .text-link { font-size:inherit; }
+.business-hours { max-width:500px; margin-top:28px; padding-top:23px; border-top:1px solid #6193a4; }
+.business-hours h3 { margin:0 0 17px; color:var(--on-brand); font-size:1.125rem; line-height:1.45; }
+.business-hours dl { margin:0; color:#d1e7ef; font-size:.9375rem; line-height:1.7; }
+.business-hours dl > div { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:12px; }
+.business-hours dt { min-width:0; font-weight:600; }
+.business-hours dd { min-width:0; margin:0; text-align:right; }
+.business-hours dd > span { display:block; }
+.contact-caption { max-width:320px; line-height:1.65; }
